@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- FrameLayout with only left and right borders -->
+    <FrameLayout
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/border_left_right"
+    android:padding="9dp">
+
+<ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="Video Icon"
+        app:srcCompat="@drawable/_83e3e09e420309c9e3539b53e3aea1e" />
+
+</FrameLayout>
+
+    <!-- Text below the icon -->
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Video"
+android:textColor="#FF0077"
+android:textSize="14sp"
+android:layout_marginTop="4dp"
+android:gravity="center"/>
+
+    </LinearLayout>

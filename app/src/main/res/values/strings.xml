@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BGK</string>
+    <string name="underlined_text"><u>Đã ôn</u></string>
+    <string name="underlined_text1"><u>Chưa ôn</u></string>
+</resources>

@@ -1,0 +1,12 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <gradient
+                android:startColor="@color/white1"
+            android:endColor="@color/white"
+                android:centerColor="@color/white"
+                android:type="linear"
+            android:angle="270"/>         <!-- Chia nửa theo chiều dọc (góc 270 độ) -->
+        </shape>
+    </item>
+</layer-list>
