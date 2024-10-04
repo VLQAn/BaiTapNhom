@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#E7E7E7"
     tools:context=".Activity_canhan">
 
     <LinearLayout
@@ -13,39 +14,61 @@
         android:layout_height="50dp"
         android:orientation="horizontal"
         >
-        <android.widget.Button
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:text="Cá nhân"
-       />
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_daube"
+                android:background="@color/white"/>
+            <android.widget.Button
+                android:id="@+id/id_btn1"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:text="Cá nhân"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
         <Space
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
+
         <ImageButton
+            android:id="@+id/btn2"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:contentDescription="TODO"
+            android:scaleType="centerInside"
             android:src="@drawable/setting"
-            android:scaleType="fitCenter"
+            android:background="@color/white"
             />
     </LinearLayout>
     <LinearLayout
+        android:background="@drawable/bg_ctv"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="170dp"
         android:orientation="vertical"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:padding="20dp">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="75dp"
             android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:background="#D9D9D9"
+            >
 
             <!-- Ảnh đại diện -->
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:scaleType="fitCenter"/>
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_user"
+                />
 
 
             <LinearLayout
@@ -60,18 +83,310 @@
                     android:text="Name"
                     android:textStyle="bold"
                     android:textSize="16sp"
+                    android:paddingStart="10dp"
                     android:textColor="#000000"/>
 
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:paddingStart="10dp"
                     android:text="Chuỗi học tập n ngày liên tục\n(Tổng m ngày)"
-                    android:textSize="14sp"
-                    android:textColor="#8A8A8A"/>
+                    android:textColor="#161414"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="40dp">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_star"
+                   />
+                <android.widget.Button
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:text="0.0K"
+                    android:background="@color/white"
+                    />
+            </LinearLayout>
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="40dp">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/heart"
+                   />
+                <android.widget.Button
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:text="0.0K"
+                    android:background="@color/white"
+                    />
             </LinearLayout>
         </LinearLayout>
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:padding="20dp"
+        android:background="@drawable/bg_ctv"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:paddingStart="15dp"
+            android:text="Thành tích của tôi"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_marginStart="20dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/ld1">
+
+                <!-- Ngôi sao -->
+                <ImageView
+                    android:id="@+id/imageViewStar1"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_star" />
+
+                <!-- TextView hiển thị cấp độ -->
+                <TextView
+                    android:id="@+id/textViewLevel1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="LV.0"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:padding="4dp"
+                    android:background="@drawable/level_background"
+                    />
+
+
+            </LinearLayout>
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent"/>
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/ld2">
+
+                <!-- Ngôi sao -->
+                <ImageView
+                    android:id="@+id/imageViewStar2"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/heart" />
+
+                <!-- TextView hiển thị cấp độ -->
+                <TextView
+                    android:id="@+id/textViewLevel2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="LV.0"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:padding="4dp"
+                    android:background="@drawable/level_background"
+                    />
+
+
+            </LinearLayout>
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent"/>
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/ld3">
+
+                <!-- Ngôi sao -->
+                <ImageView
+                    android:id="@+id/imageViewStar"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_mucsic" />
+                <!-- TextView hiển thị cấp độ -->
+                <TextView
+                    android:id="@+id/textViewLevel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="LV.0"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:padding="4dp"
+                    android:background="@drawable/level_background"
+                    />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal">
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="100dp"
+                android:layout_height="16dp"
+                android:progress="50"
+                android:layout_marginStart="20dp"
+                android:progressDrawable="@drawable/custom_progress" />
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent"/>
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="100dp"
+                android:layout_height="16dp"
+                android:progress="50"
+
+                android:progressDrawable="@drawable/custom_progress" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent"/>
+            <ProgressBar
+                android:id="@+id/progressBar3"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="100dp"
+                android:layout_height="16dp"
+                android:progress="50"
+                android:progressDrawable="@drawable/custom_progress" />
+        </LinearLayout>
+
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:id="@+id/btn3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/white"
+            android:text="Xem tất cả"
+            android:textColor="@color/black" />
+    </LinearLayout>
+    <LinearLayout
+        android:background="@drawable/bg_ctv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:padding="20dp"
+        >
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:text="Ngôn ngữ đang được hoc"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_radio"
+            >
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_usa" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:text="Tiếng Anh"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src ="@drawable/ic_tick"
+                android:scaleType="fitCenter"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_radio"
+            >
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_japan" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:text="Tiếng Nhật"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src ="@drawable/ic_tick"
+                android:scaleType="fitCenter"/>
+
+        </LinearLayout>
 
     </LinearLayout>
+
 </LinearLayout>
