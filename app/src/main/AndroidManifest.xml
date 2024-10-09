@@ -11,6 +11,30 @@
         android:theme="@style/Theme.BTGK"
         tools:targetApi="31">
         <activity
+            android:name=".activity_ktht2"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_ktht1"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_ktbc4"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_ktbc3"
+            android:exported="false" />
+        <activity
+            android:name=".activity_ktbc2"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_ktbc1"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_Nhapmon"
+            android:exported="false" />
+        <activity
+            android:name=".Class"
+            android:exported="false" />
+        <activity
             android:name=".Activity_canhan"
             android:exported="false" />
         <activity
