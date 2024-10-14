@@ -67,7 +67,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:text="Chủ đề gọi món"
+        android:text="Ordering theme"
         android:textSize="16dp"
         android:textStyle="bold"
         />
@@ -82,7 +82,7 @@
         android:id="@+id/button1"
         android:layout_width="210dp"
         android:layout_height="70dp"
-        android:text="Từ vựng"
+        android:text="Vocabulary"
         android:textAllCaps="false"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -117,7 +117,7 @@
         android:id="@+id/button3"
         android:layout_width="210dp"
         android:layout_height="70dp"
-        android:text="Mẫu câu"
+        android:text="Sample sentences"
         android:textAllCaps="false"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -134,7 +134,7 @@
         android:id="@+id/button4"
         android:layout_width="210dp"
         android:layout_height="70dp"
-        android:text="Luyện nghe"
+        android:text="Listening"
         android:textAllCaps="false"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -151,7 +151,7 @@
         android:id="@+id/button5"
         android:layout_width="210dp"
         android:layout_height="70dp"
-        android:text="Ôn tập"
+        android:text="Review"
         android:textAllCaps="false"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -198,7 +198,7 @@
       <TextView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="Nhập môn"
+          android:text="Introduction"
           android:textAlignment="center"
           />
 
@@ -248,7 +248,7 @@
       <TextView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="Ôn tập"
+          android:text="Review"
           android:textAlignment="center"
           />
 

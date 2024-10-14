@@ -46,7 +46,7 @@
         <android.widget.Button
             android:layout_width="100dp"
             android:layout_height="40dp"
-            android:text="Kiểm tra"
+            android:text="Test"
             android:background="@drawable/bg_buttoncheck"
             android:textAllCaps="false"
             android:textSize="20dp"

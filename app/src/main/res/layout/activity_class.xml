@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:text="Khóa học"
+            android:text="Course"
             android:textAllCaps="false"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -108,7 +108,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:gravity="center_vertical"
-            android:text="Khóa học đã học gần đây "
+            android:text="Recently taken courses "
             />
         <LinearLayout
             android:layout_width="match_parent"
@@ -130,14 +130,14 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Thầy Daniel"
+                    android:text="Mr. Daniel"
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:textSize="16sp"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Mẫu câu thông dụng hàng ngày"
+                    android:text="Common daily sentences"
                     android:layout_marginStart="30dp"
                     android:textStyle="bold"
                     android:textSize="16sp"/>
@@ -160,14 +160,14 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Gia đình Simpson"
+                    android:text="The Simpsons"
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:textSize="16sp"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Xưng hô với người thân trong gia đình"
+                    android:text="Addressing family members"
                     android:layout_marginStart="30dp"
                     android:textStyle="bold"
                     android:textSize="16sp"/>

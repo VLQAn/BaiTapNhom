@@ -26,7 +26,7 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:background="@color/white"
-            android:text="Cá nhân"
+            android:text="Notification"
             android:textAllCaps="false"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -70,7 +70,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
-                    android:text="Mục tiêu hôm nay"
+                    android:text="Notification"
                     android:textStyle="bold"
                     android:textSize="16sp"
                     android:paddingStart="10dp"
@@ -81,7 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:paddingStart="10dp"
-                    android:text="Tiếp tục để đạt mục tiêu hôm nay!"
+                    android:text="Continue to achieve your goals today!"
                     android:textColor="#161414"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -109,7 +109,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
-                android:text="Mẫu câu mới hôm nay"
+                android:text="New sentence pattern today"
                 android:textStyle="bold"
                 android:textSize="16sp"
                 android:paddingStart="10dp"
@@ -120,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingStart="10dp"
-                android:text="Hãy xem qua thử mẫu câu này nào!"
+                android:text="Let's try this sample sentence!"
                 android:textColor="#161414"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -178,7 +178,7 @@
             android:layout_height="match_parent"
             android:textStyle="bold"
 
-            android:text="Chương trình khóa học khuyến mãi trong tháng 9. Tham gia ngay" />
+            android:text="Course promotion program in September. Join now" />
 
 
     </LinearLayout>
@@ -234,7 +234,7 @@
             android:layout_width="300dp"
             android:layout_height="match_parent"
             android:textStyle="bold"
-            android:text="Bạn sắp ghi danh vào bảng xếp hạng rồi đấy! Săn thêm tim thôi nào!" />
+            android:text="You're almost on the leaderboard! Let's go hunting for hearts!" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
