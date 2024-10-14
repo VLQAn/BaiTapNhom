@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView36"
+        android:layout_width="52dp"
+        android:layout_height="42dp"
+        android:rotation="90"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/baseline_keyboard_arrow_down_24"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="108dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView37"
+        android:layout_width="46dp"
+        android:layout_height="36dp"
+        app:srcCompat="@drawable/bookmark"
+        tools:layout_editor_absoluteX="349dp"
+        tools:layout_editor_absoluteY="114dp"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/view7"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="66dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="50dp"
+            app:srcCompat="@drawable/_660173" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="55dp"
+            android:paddingTop="4dp"
+            android:text="0"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="59dp"
+            android:layout_height="51dp"
+            android:layout_marginLeft="145dp"
+            android:layout_marginTop="40dp"
+            app:srcCompat="@drawable/images" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="104dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="15dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/_21693" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="579dp"
+        android:layout_marginTop="4dp"
+        android:background="#c2f8cb"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView36">
+
+        <TextView
+            android:id="@+id/textView44"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Happy Theme"
+            android:textSize="32dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="373dp"
+            android:layout_height="506dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/border"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView46"
+                android:layout_width="317dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="Hãy nghe và chọn thứ tự từ để tạo thành một câu hoàn chỉnh"
+                android:textSize="25dp" />
+
+            <ImageView
+                android:id="@+id/imageView22"
+                android:layout_width="47dp"
+                android:layout_height="42dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                app:srcCompat="@drawable/speak" />
+
+            <LinearLayout
+                android:layout_width="342dp"
+                android:layout_height="103dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/border1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="302dp"
+                    android:layout_height="wrap_content"
+                    android:text="_________ __ ___ __ ______, ___ __ ______."
+                    android:textAlignment="center"
+                    android:textSize="26dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

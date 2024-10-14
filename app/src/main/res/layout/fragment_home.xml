@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="66dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="50dp"
+            app:srcCompat="@drawable/_660173" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="55dp"
+            android:paddingTop="4dp"
+            android:text="0"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="59dp"
+            android:layout_height="51dp"
+            android:layout_marginLeft="145dp"
+            android:layout_marginTop="40dp"
+            app:srcCompat="@drawable/images" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="104dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="15dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/_21693" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="370dp"
+        android:layout_height="420dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="300dp"
+            android:layout_height="210dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/_d73b9f67f338abbf3866a1e60d62060" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="276dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Lv.0"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="First level challenge"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="342dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/blue"
+            android:text="Start quiz"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:cornerRadius="15dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
