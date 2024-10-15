@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/lagsubbackground"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:id="@+id/speed_repeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/strokebackground"
+            android:paddingLeft="20dp"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:text="1x"
+            android:textAllCaps="true"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/repeat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/strokebackground"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            app:srcCompat="@drawable/baseline_repeat_24" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/main_sub_lag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="[Subtitles are off]"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/page_curent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="1/15"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+</LinearLayout>

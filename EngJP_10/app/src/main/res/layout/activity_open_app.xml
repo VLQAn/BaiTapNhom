@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    tools:context=".Activity_OpenApp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Learn"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056" />
+
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:backgroundTint="@color/white"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/bg_radio"
+        android:text="English"
+        android:paddingStart="20dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="60dp"
+        android:text="Hạng mục bạn muốn học"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/radioButton2"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="@+id/radioButton2"
+        app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/radioButton2"
+        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintStart_toStartOf="@+id/radioButton2"
+        app:layout_constraintTop_toTopOf="@+id/radioButton2"
+        app:srcCompat="@drawable/ic_usa" />
+
+
+    <TextView
+        android:id="@+id/checkedTextView"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/bg_ctv"
+        android:gravity="center|left"
+        android:paddingStart="70dp"
+        android:text="English used in life"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <CheckedTextView
+        android:id="@+id/checkedTextView2"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_ctv"
+        android:gravity="center"
+        android:paddingStart="70dp"
+        android:text="English for Specific Purposes"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/checkedTextView"
+        app:layout_constraintStart_toStartOf="@+id/checkedTextView"
+        app:layout_constraintTop_toBottomOf="@+id/checkedTextView" />
+
+    <CheckedTextView
+        android:id="@+id/checkedTextView3"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_ctv"
+        android:gravity="center"
+        android:paddingStart="70dp"
+        android:text="Common English Idioms"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/checkedTextView2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/checkedTextView2"
+        app:layout_constraintTop_toBottomOf="@+id/checkedTextView2" />
+
+    <CheckedTextView
+        android:id="@+id/checkedTextView4"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_ctv"
+        android:gravity="center"
+        android:paddingStart="70dp"
+        android:text="Master the basics! English grammar structures"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/checkedTextView3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/checkedTextView3"
+        app:layout_constraintTop_toBottomOf="@+id/checkedTextView3" />
+
+    <Button
+        android:id="@+id/btn_open"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="OK"
+        android:backgroundTint="@color/btn_color1"
+        app:layout_constraintEnd_toEndOf="@+id/checkedTextView4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/checkedTextView4"
+        app:layout_constraintTop_toBottomOf="@+id/checkedTextView4" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="@+id/checkedTextView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/checkedTextView"
+        app:layout_constraintTop_toTopOf="@+id/checkedTextView"
+        android:src = "@drawable/ic_ctv1"/>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="297dp"
+        app:layout_constraintEnd_toEndOf="@+id/checkedTextView2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/checkedTextView2"
+        app:layout_constraintTop_toTopOf="@+id/checkedTextView2"
+        app:srcCompat="@drawable/ic_ctv2" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="@+id/checkedTextView3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/checkedTextView3"
+        app:layout_constraintTop_toTopOf="@+id/checkedTextView3"
+        app:srcCompat="@drawable/ic_ctv3" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="@+id/checkedTextView4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/checkedTextView4"
+        app:layout_constraintTop_toTopOf="@+id/checkedTextView4"
+        app:srcCompat="@drawable/ic_ctv4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/video"
+        android:icon="@drawable/ic_video"
+        android:title="Video" />
+
+    <item
+        android:id="@+id/nhapmom"
+        android:icon="@drawable/ic_introductory"
+        android:title="Introductory" />
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/lop"
+        android:icon="@drawable/ic_class"
+        android:title="Class" />
+
+    <item
+        android:id="@+id/review"
+        android:icon="@drawable/ic_review"
+        android:title="Review" />
+
+</menu>

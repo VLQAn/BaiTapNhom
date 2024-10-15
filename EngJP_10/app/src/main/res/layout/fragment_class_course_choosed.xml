@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Class_Course_Choosed">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_vw_class_course_choose_pre"
+            android:layout_width="52dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="9dp"
+            android:rotation="90"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            app:srcCompat="@drawable/baseline_keyboard_arrow_down_24" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="46dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="297dp"
+            android:layout_marginTop="9dp"
+            app:layout_constraintStart_toEndOf="@+id/imageView16"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            app:srcCompat="@drawable/bookmark" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="387dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border"
+        android:backgroundTint="#aee4ff"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+
+        <LinearLayout
+            android:layout_width="233dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="10dp"
+                android:text="Mr. Daniel"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="Common daily sentences"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+
+            <ImageView
+                android:id="@+id/imageView19"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/daniel" />
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="350dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/border"
+        android:backgroundTint="#938C8C"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout1" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="4dp"
+        android:text="10%"
+        app:layout_constraintStart_toEndOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout1" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="20dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/border"
+        android:backgroundTint="#F10606"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout1" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="385dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/border"
+        android:backgroundTint="#aee4ff"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2">
+
+        <LinearLayout
+            android:layout_width="247dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="10dp"
+                android:text="Lession 1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="Sample greetings of the day"
+                android:textSize="15dp"
+                tools:ignore="TextSizeCheck" />
+
+            <ImageView
+                android:id="@+id/imageView21"
+                android:layout_width="48dp"
+                android:layout_height="34dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="15dp"
+                app:srcCompat="@drawable/heart" />
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="10" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/btn_color1"
+            android:text="Completed"
+            android:textSize="14dp"
+            app:cornerRadius="15dp"
+            tools:ignore="TextSizeCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="385dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border"
+        android:backgroundTint="#aee4ff"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <LinearLayout
+            android:layout_width="247dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="10dp"
+                android:text="Lession 2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="Sample greetings of the day"
+                android:textSize="15dp"
+                tools:ignore="TextSizeCheck" />
+
+            <ImageView
+                android:id="@+id/imageView33"
+                android:layout_width="48dp"
+                android:layout_height="34dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="15dp"
+                app:srcCompat="@drawable/heart" />
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="10" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/white"
+            android:text="incomplete"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            app:cornerRadius="15dp"
+            tools:ignore="TextSizeCheck" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
