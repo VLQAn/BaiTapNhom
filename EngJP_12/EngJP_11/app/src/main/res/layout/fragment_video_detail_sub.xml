@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Sub">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_white_border_nostroke"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:id="@+id/speed_repeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_white_border_stroke"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="5dp"
+                android:text="1x"
+                android:textAllCaps="true"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/repeat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/background_white_border_stroke"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                app:srcCompat="@drawable/baseline_repeat_24" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/main_sub_lag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Because it was a week ago, and nobody came!"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/sub_sub_lang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bởi vì đã một tuần rồi và không có ai đến cả!"
+            android:textColor="@color/sub_text_color"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/page_curent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="1/15"
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</FrameLayout>

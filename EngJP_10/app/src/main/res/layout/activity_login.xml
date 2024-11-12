@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="65dp"
+        android:text="Sign up for an EngJP account"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="12dp"
+        android:text="Store your academic records"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="86dp"
+        android:text="By logging in, you agree to the following terms."
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button5"
+        tools:ignore="TextSizeCheck" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="34dp"
+        android:background="@drawable/border1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21">
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="15dp"
+            android:text="Email"
+            android:textAlignment="center"
+            android:textSize="17dp" />
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btnContinue"
+        android:layout_width="300dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="6dp"
+        android:backgroundTint="@color/btn_color1"
+        android:text="Continue"
+        android:textSize="20dp"
+        app:cornerRadius="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="300dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="71dp"
+        android:backgroundTint="@color/btn_color1"
+        android:text="Already have an account?  Login"
+        android:textSize="15dp"
+        app:cornerRadius="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageFaceBook"
+        tools:ignore="TextSizeCheck" />
+
+    <ImageView
+        android:id="@+id/imageFaceBook"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="38dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnContinue"
+        app:srcCompat="@drawable/ic_facebook"
+        android:contentDescription="Click to open web link"/>
+
+    <ImageView
+        android:id="@+id/imageGG"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="38dp"
+        app:layout_constraintStart_toEndOf="@+id/imageFaceBook"
+        app:layout_constraintTop_toBottomOf="@id/btnContinue"
+        app:srcCompat="@drawable/ic_google" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="189dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Privacy Policy"
+        android:textAlignment="textEnd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="187dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Terms of Use"
+        app:layout_constraintStart_toEndOf="@+id/editTextText2"
+        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

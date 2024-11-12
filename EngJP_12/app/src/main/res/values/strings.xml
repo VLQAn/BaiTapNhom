@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EngJP_1.1</string>
+    <string name="underlined_text"><u>Reviewed</u></string>
+    <string name="underlined_text1"><u>Not reviewed yet</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="facebook_app_id">574747101904243</string>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="app_background">#F2F2F2</color>
+    <color name="btn_color1">#1e0f75</color>
+    <color name="btn_nav_color">#FE036A</color>
+    <color name="home_background">#1813a2</color>
+    <color name="class_background">#32aab5</color>
+    <color name="review_background">#FF4747</color>
+    <color name="introduction_background">#f8d90f</color>
+    <color name="video_background">#f77ce3</color>
+    <color name="stroke">#D9D9D9</color>
+    <color name="sub_text_color">#8E8E8E</color>
+    <color name="button_color2">#033495</color>
+    <color name="vocabulary_back_ground">#C2F8CB</color>
+    <color name="correct50">#5000AAFF</color>
+    <color name="correct">#00AAFF</color>
+    <color name="wrong50">#50FF4747</color>
+    <color name="wrong">#FF4747</color>
+</resources>
