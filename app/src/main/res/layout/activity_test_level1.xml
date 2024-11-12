@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activity_TestLevel1">
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="83dp"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="113dp"
+        android:gravity="center"
+        android:text="First, Simple Test your skills!"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Find out what your interests, job and current English level are."
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/textView24"
+        app:layout_constraintStart_toStartOf="@+id/textView24"
+        app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+    <Button
+        android:id="@+id/btn_test_lv1_ok"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="260dp"
+        android:backgroundTint="@color/btn_color1"
+        android:gravity="center"
+        android:text="OK"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView25"
+        app:layout_constraintStart_toStartOf="@+id/textView25"
+        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+    <FrameLayout
+        android:id="@+id/btn_test_lv1_skip"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/background_white_border_stroke"
+        app:layout_constraintEnd_toEndOf="@+id/btn_test_lv1_ok"
+        app:layout_constraintStart_toStartOf="@+id/btn_test_lv1_ok"
+        app:layout_constraintTop_toBottomOf="@+id/btn_test_lv1_ok">
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Skip the test"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
