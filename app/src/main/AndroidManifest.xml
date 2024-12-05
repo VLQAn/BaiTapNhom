@@ -11,6 +11,15 @@
         android:theme="@style/Theme.BTGK"
         tools:targetApi="31">
         <activity
+            android:name=".VideoAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".Listvideo"
+            android:exported="false" />
+        <activity
+            android:name=".Review"
+            android:exported="false" />
+        <activity
             android:name=".activity_ktht2"
             android:exported="false" />
         <activity
