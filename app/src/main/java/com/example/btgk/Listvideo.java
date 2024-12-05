@@ -36,17 +36,18 @@ public class Listvideo extends AppCompatActivity {
             return insets;
         });
 
-        // Khởi tạo Firebase Firestore
+
         db = FirebaseFirestore.getInstance();
 
-        // Khởi tạo RecyclerView
+
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         videoList = new ArrayList<>();
-        videoAdapter = new VideoAdapter(videoList);
+        videoAdapter = new VideoAdapter(this, videoList);
         recyclerView.setAdapter(videoAdapter);
 
-        // Tải dữ liệu video từ Firestore
+
+
         fetchVideos();
     }
 

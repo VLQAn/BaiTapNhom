@@ -1,5 +1,7 @@
 package com.example.btgk;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +14,10 @@ import java.util.ArrayList;
 public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHolder> {
 
     private ArrayList<Video> videoList;
+    private Context context;
 
-    // Constructor
-    public VideoAdapter(ArrayList<Video> videoList) {
+    public VideoAdapter(Context context, ArrayList<Video> videoList) {
+        this.context = context;
         this.videoList = videoList;
     }
 
@@ -28,7 +31,13 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
     public void onBindViewHolder(VideoViewHolder holder, int position) {
         Video video = videoList.get(position);
         holder.titleTextView.setText(video.getTitle());
-        // Bạn có thể thêm hành động khác nếu muốn hiển thị URL video hoặc xử lý sự kiện
+
+        // Xử lý sự kiện click để mở VideoPlayerActivity
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, VideoPlayerActivity.class);
+            intent.putExtra("videoUrl", video.getUrl());
+            context.startActivity(intent);
+        });
     }
 
     @Override
