@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "663565215374",
+    "firebase_url": "https://engjp-3e55b-default-rtdb.firebaseio.com",
+    "project_id": "engjp-3e55b",
+    "storage_bucket": "engjp-3e55b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663565215374:android:488beea2278cb0f32e8bdf",
+        "android_client_info": {
+          "package_name": "com.example.engjp_11"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMpKyLdXQeCapDbNgyHKJoxIBLUPE-m4Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
