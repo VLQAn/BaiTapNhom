@@ -1,9 +1,12 @@
 package com.example.engjp_11;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -54,9 +57,22 @@ public class Activity_VideoDetail extends AppCompatActivity {
         bottomSheetDialog.setContentView(bottomSheetView);
 
         // Thiết lập sự kiện click cho các TextView trong BottomSheet
-        bottomSheetView.findViewById(R.id.textView).setOnClickListener(v -> {
-            // Xử lý sự kiện "Xem video gốc trên Youtube"
-            bottomSheetDialog.dismiss();
+        bottomSheetView.findViewById(R.id.textView_origin_video).setOnClickListener(v -> {
+            // URL của video YouTube
+            String youtubeUrl = "https://www.youtube.com/watch?v=3AD5SC9Vawo"; // Thay bằng video của bạn
+
+            // Tạo Intent để mở video
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeUrl));
+            intent.setPackage("com.google.android.youtube"); // Chỉ định mở bằng ứng dụng YouTube
+
+            // Kiểm tra nếu ứng dụng YouTube có thể xử lý Intent
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            } else {
+                // Nếu không, mở bằng trình duyệt
+                Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeUrl));
+                startActivity(webIntent);
+            }
         });
 
         bottomSheetView.findViewById(R.id.textView7).setOnClickListener(v -> {

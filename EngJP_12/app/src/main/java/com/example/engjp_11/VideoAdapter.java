@@ -19,12 +19,12 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 import java.util.List;
 
-public class ClassCourseAdapter extends BaseAdapter {
+public class VideoAdapter extends BaseAdapter {
 
     private final Context context;
-    private final List<ClassCourseItem> courseList;
+    private final List<VideoItem> courseList;
 
-    public ClassCourseAdapter(Context context, List<ClassCourseItem> courseList) {
+    public VideoAdapter(Context context, List<VideoItem> courseList) {
         this.context = context;
         this.courseList = courseList;
     }
@@ -47,16 +47,17 @@ public class ClassCourseAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.class_course_item, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.video_item, parent, false);
         }
 
-        ImageView imageView = convertView.findViewById(R.id.imageView);
-        TextView titleView = convertView.findViewById(R.id.titleView);
-        TextView descriptionView = convertView.findViewById(R.id.descriptionView);
+        ImageView imageView = convertView.findViewById(R.id.video_img);
+        TextView titleView = convertView.findViewById(R.id.video_title);
+        TextView descriptionView = convertView.findViewById(R.id.video_sentence);
+        TextView heartCount = convertView.findViewById(R.id.heart_count);
 
-        ClassCourseItem item = courseList.get(position);
+        VideoItem item = courseList.get(position);
 
-        String imageUrl = item.getImageResId();
+        String imageUrl = item.getVideoImg();
         if (imageUrl != null && !imageUrl.isEmpty()) {
             Glide.with(context)
                     .load(imageUrl)
@@ -85,7 +86,8 @@ public class ClassCourseAdapter extends BaseAdapter {
         }
 
         titleView.setText(item.getTitle());
-        descriptionView.setText(item.getDescription());
+        descriptionView.setText(item.getSentence());
+        heartCount.setText(item.getHeartCount());
 
         return convertView;
     }

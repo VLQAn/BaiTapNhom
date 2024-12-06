@@ -3,6 +3,7 @@ package com.example.engjp_11;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +23,10 @@ public class vocabulary_completed_test extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        TextView result = findViewById(R.id.resultText);
+        int nocorrect = getIntent().getIntExtra("numbercorrect", 0);
+        result.setText("Correct " + nocorrect + "/5");
 
         // Xử lý sự kiện cho nút check again
         Button checkAgain = findViewById(R.id.checkAgainButton);

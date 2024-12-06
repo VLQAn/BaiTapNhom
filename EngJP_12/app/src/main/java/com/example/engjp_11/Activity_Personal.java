@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +26,18 @@ public class Activity_Personal extends AppCompatActivity {
             return insets;
         });
 
+        TextView personalNameTextView = findViewById(R.id.persional_name);
+
+        // Lấy email từ Intent
+        String userEmail = getIntent().getStringExtra("userName");
+
         ImageButton btn_prevent = findViewById(R.id.persional_prevent);
+        ImageView img = findViewById(R.id.img_persional);
+
+        img.setOnClickListener(v -> {
+            Intent intent = new Intent(Activity_Personal.this, ActivityInfomation.class);
+            startActivity(intent);
+        });
         // Thiết lập OnClickListener cho ImageButton
         btn_prevent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,5 +52,10 @@ public class Activity_Personal extends AppCompatActivity {
             Intent intent = new Intent(Activity_Personal.this, Activity_Login.class);
             startActivity(intent);
         });
+
+        if (userEmail == null) {
+            // Cập nhật personal_name bằng email đã nhập
+            personalNameTextView.setText("Username");
+        }else personalNameTextView.setText(userEmail);
     }
 }

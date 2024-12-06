@@ -76,9 +76,11 @@
             android:orientation="horizontal">
 
             <!-- Ảnh đại diện -->
-            <ImageView
+            <ImageButton
+                android:id="@+id/img_persional"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
+                android:background="@color/white"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_persional_user" />
 
@@ -90,6 +92,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/persional_name"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:paddingStart="10dp"

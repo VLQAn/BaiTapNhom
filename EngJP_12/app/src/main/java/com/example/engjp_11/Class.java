@@ -82,9 +82,6 @@ public class Class extends Fragment {
                     tab.setText("Course");
                     break;
                 case 1:
-                    tab.setText("Speaking");
-                    break;
-                case 2:
                     tab.setText("Listening");
                     break;
             }

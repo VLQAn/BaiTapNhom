@@ -6,8 +6,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -73,6 +85,34 @@ public class Introduction_SampleSentence extends Fragment {
                 fragmentManager.popBackStack(); // Quay lại fragment trước đó
             } else {
                 getActivity().getOnBackPressedDispatcher(); // Đóng fragment hoặc thoát nếu không còn fragment nào khác
+            }
+        });
+        // Tìm RecyclerView
+        RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        // Kết nối Firebase
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Sentences");
+
+        List<SentenceItem> sentenceList = new ArrayList<>();
+        SentenceAdapter adapter = new SentenceAdapter(getContext(), sentenceList);
+        recyclerView.setAdapter(adapter);
+
+        // Lấy dữ liệu từ Firebase
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                sentenceList.clear();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    SentenceItem sentenceItem = snapshot.getValue(SentenceItem.class);
+                    sentenceList.add(sentenceItem);
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Xử lý lỗi
             }
         });
 

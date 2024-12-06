@@ -2,8 +2,12 @@ package com.example.engjp_11;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -128,5 +132,26 @@ public class Contain_Navigation extends AppCompatActivity {
             Intent intent = new Intent(Contain_Navigation.this, Notice.class);
             startActivity(intent);
         });
+
+        ImageView heartIcon = findViewById(R.id.ivHeart);
+        heartIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPopupGuide(v); // Hiển thị PopupWindow
+            }
+        });
+    }
+    private void showPopupGuide(View anchorView) {
+        // Inflate layout của popup
+        View popupView = LayoutInflater.from(this).inflate(R.layout.popup_guide, null);
+
+        // Tạo PopupWindow
+        PopupWindow popupWindow = new PopupWindow(popupView,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                true);
+
+        // Hiển thị popup ngay bên dưới icon (đè lên giao diện)
+        popupWindow.showAsDropDown(anchorView, 0, -20); // Điều chỉnh vị trí hiển thị với offset (x, y)
     }
 }

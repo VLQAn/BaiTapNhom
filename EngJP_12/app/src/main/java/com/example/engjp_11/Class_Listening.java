@@ -1,23 +1,18 @@
 package com.example.engjp_11;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Class_Course#newInstance} factory method to
+ * Use the {@link Class_Listening#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Class_Course_Item extends Fragment {
+public class Class_Listening extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,7 +23,7 @@ public class Class_Course_Item extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Class_Course_Item() {
+    public Class_Listening() {
         // Required empty public constructor
     }
 
@@ -38,11 +33,11 @@ public class Class_Course_Item extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Class_Course.
+     * @return A new instance of fragment Class_Listening.
      */
     // TODO: Rename and change types and number of parameters
-    public static Class_Course newInstance(String param1, String param2) {
-        Class_Course fragment = new Class_Course();
+    public static Class_Listening newInstance(String param1, String param2) {
+        Class_Listening fragment = new Class_Listening();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,25 +58,6 @@ public class Class_Course_Item extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.class_course_item, container, false);
-
-        TextView itemClassCourse = view.findViewById(R.id.class_course_header_title);
-        itemClassCourse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("DEBUG", "item_class_course clicked manually");
-                // Chuyển Fragment
-                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                Fragment fragmenIntroVocab = new Class_Course_Choosed();
-                fragmentTransaction.replace(R.id.class_view, fragmenIntroVocab);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            }
-        });
-
-
-
-        return view;
+        return inflater.inflate(R.layout.fragment_class__listening, container, false);
     }
 }

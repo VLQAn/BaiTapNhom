@@ -16,9 +16,7 @@ public class classViewPagerAdapter extends FragmentStateAdapter {
             case 0:
                 return new Class_Course();
             case 1:
-//                return new Class_Speaking();
-            case 2:
-//                return new Class_Listening();
+                return new Introductory_Listening();
             default:
                 return new Home();
 
@@ -27,6 +25,6 @@ public class classViewPagerAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 2;
     }
 }

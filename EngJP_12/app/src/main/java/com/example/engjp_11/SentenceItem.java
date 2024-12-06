@@ -1,25 +1,25 @@
 package com.example.engjp_11;
 
-public class WordItem {
-    private String word;
+public class SentenceItem {
+    private String sentence;
     private String meaning;
     private boolean isSaved;
 
     // Bắt buộc có constructor rỗng để Firebase sử dụng
-    public WordItem() {}
+    public SentenceItem() {}
 
-    public WordItem(String word, String meaning, boolean isSaved) {
-        this.word = word;
+    public SentenceItem(String sentence, String meaning, boolean isSaved) {
+        this.sentence =sentence;
         this.meaning = meaning;
         this.isSaved = isSaved;
     }
 
-    public String getWord() {
-        return word;
+    public String getSentence() {
+        return sentence;
     }
 
-    public void setWord(String word) {
-        this.word = word;
+    public void setSentence(String word) {
+        this.sentence = word;
     }
 
     public String getMeaning() {

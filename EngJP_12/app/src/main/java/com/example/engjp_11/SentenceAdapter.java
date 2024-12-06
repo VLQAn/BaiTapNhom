@@ -19,31 +19,31 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
-public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordViewHolder> {
+public class SentenceAdapter extends RecyclerView.Adapter<SentenceAdapter.SentenceViewHolder> {
 
-    private final List<WordItem> wordList;
+    private final List<SentenceItem> sentenceList;
     private final Context context;
 
-    public WordAdapter(Context context, List<WordItem> wordList) {
+    public SentenceAdapter(Context context, List<SentenceItem> sentenceList) {
         this.context = context;
-        this.wordList = wordList;
+        this.sentenceList = sentenceList;
     }
 
     @NonNull
     @Override
-    public WordViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_word, parent, false);
-        return new WordViewHolder(view);
+    public SentenceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.item_sentence, parent, false);
+        return new SentenceViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull WordViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        WordItem wordItem = wordList.get(position);
-        holder.wordText.setText(wordItem.getWord());
-        holder.meaningText.setText(wordItem.getMeaning());
+    public void onBindViewHolder(@NonNull SentenceViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        SentenceItem sentenceItem = sentenceList.get(position);
+        holder.sentenceText.setText(sentenceItem.getSentence());
+        holder.meaningText.setText(sentenceItem.getMeaning());
 
         // Hiển thị biểu tượng đúng trạng thái
-        if (wordItem.isSaved()) {
+        if (sentenceItem.isSaved()) {
             holder.saveIcon.setImageResource(R.drawable.bookmark_circle_filled);
         } else {
             holder.saveIcon.setImageResource(R.drawable.bookmark_circle);
@@ -60,14 +60,14 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordViewHolder
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     // Chuyển đổi trạng thái lưu
-                    wordItem.setSaved(!wordItem.isSaved());
+                    sentenceItem.setSaved(!sentenceItem.isSaved());
 
                     // Cập nhật Firebase
-                    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Vocabulary");
-                    databaseReference.child(String.valueOf(position + 1)).child("isSaved").setValue(wordItem.isSaved());
+                    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Sentences");
+                    databaseReference.child(String.valueOf(position + 1)).child("isSaved").setValue(sentenceItem.isSaved());
 
                     // Cập nhật biểu tượng
-                    if (wordItem.isSaved()) {
+                    if (sentenceItem.isSaved()) {
                         holder.saveIcon.setImageResource(R.drawable.bookmark_circle_filled);
                     } else {
                         holder.saveIcon.setImageResource(R.drawable.bookmark_circle);
@@ -83,16 +83,16 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordViewHolder
 
     @Override
     public int getItemCount() {
-        return wordList.size();
+        return sentenceList.size();
     }
 
-    static class WordViewHolder extends RecyclerView.ViewHolder {
-        TextView wordText, meaningText;
+    static class SentenceViewHolder extends RecyclerView.ViewHolder {
+        TextView sentenceText, meaningText;
         ImageView saveIcon;
 
-        WordViewHolder(View itemView) {
+        SentenceViewHolder(View itemView) {
             super(itemView);
-            wordText = itemView.findViewById(R.id.word_text);
+            sentenceText = itemView.findViewById(R.id.sentence_text);
             meaningText = itemView.findViewById(R.id.meaning_text);
             saveIcon = itemView.findViewById(R.id.save_icon);
         }

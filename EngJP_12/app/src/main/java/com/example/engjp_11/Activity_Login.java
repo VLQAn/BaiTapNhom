@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,6 +25,11 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONObject;
 
@@ -34,6 +40,7 @@ public class Activity_Login extends AppCompatActivity {
     private static final int REQUEST_CODE_PICK_ACCOUNT = 1001;
     private EditText emailEditText;
     private CallbackManager callbackManager;// Request code for Google Sign-In
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +49,56 @@ public class Activity_Login extends AppCompatActivity {
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this.getApplication());
         setContentView(R.layout.activity_login);
+
+        emailEditText = findViewById(R.id.editTextTextEmailAddress);
+
+        // Tham chiếu tới "users" trong Firebase Realtime Database
+        databaseReference = FirebaseDatabase.getInstance().getReference("users");
+        findViewById(R.id.btnContinue).setOnClickListener(v -> validateEmail());
+    }
+    private void validateEmail() {
+        String inputEmail = emailEditText.getText().toString().trim();
+
+        if (inputEmail.isEmpty()) {
+            Toast.makeText(this, "Please enter an email", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        // Đọc danh sách users từ Firebase
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                boolean emailFound = false;
+                String userName = ""; // Biến lưu tên người dùng
+
+                // Lặp qua từng user để kiểm tra email
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    String email = snapshot.child("email").getValue(String.class);
+
+                    if (email != null && email.equals(inputEmail)) {
+                        emailFound = true;
+                        userName = snapshot.child("name").getValue(String.class); // Lấy tên từ Firebase
+                        break;
+                    }
+                }
+
+                if (emailFound) {
+                    // Email đúng, mở Activity_Personal
+                    Intent intent = new Intent(Activity_Login.this, Activity_Personal.class);
+                    intent.putExtra("userEmail", inputEmail);  // Truyền email vào Intent
+                    intent.putExtra("userName", userName);    // Truyền tên vào Intent
+                    startActivity(intent);
+                } else {
+                    // Email sai, hiện thông báo
+                    Toast.makeText(Activity_Login.this, "Incorrect email. Please try again.", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+//                Toast.makeText(Activity_Login.this, "Error: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+
+        });
 
         emailEditText = findViewById(R.id.editTextTextEmailAddress);
         callbackManager = CallbackManager.Factory.create();
@@ -139,7 +196,31 @@ public class Activity_Login extends AppCompatActivity {
 
 
     private void openNextActivity() {
-        Intent intent = new Intent(Activity_Login.this, Activity_Personal.class);
-        startActivity(intent);
+        String emailInput = emailEditText.getText().toString().trim();
+
+        if (emailInput.isEmpty()) {
+            Toast.makeText(this, "Please enter an email", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Kiểm tra email trong Firebase Authentication
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.fetchSignInMethodsForEmail(emailInput).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                boolean isExistingUser = !task.getResult().getSignInMethods().isEmpty();
+                if (isExistingUser) {
+                    // Nếu email đúng, chuyển sang Activity_Personal
+                    Intent intent = new Intent(Activity_Login.this, Activity_Personal.class);
+                    intent.putExtra("userEmail", emailInput);  // Truyền email vào Intent
+                    startActivity(intent);
+                } else {
+                    // Nếu email không tồn tại trong Firebase
+                    Toast.makeText(this, "Email does not exist. Please try again.", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(this, "Error checking email: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
 }

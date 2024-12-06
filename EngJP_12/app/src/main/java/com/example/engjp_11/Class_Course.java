@@ -1,15 +1,25 @@
 package com.example.engjp_11;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,36 +78,54 @@ public class Class_Course extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_class_course, container, false);
 
         listView = rootView.findViewById(R.id.class_course_listView);
-
-        // Khởi tạo danh sách các khóa học
         courseList = new ArrayList<>();
-        courseList.add(new ClassCourseItem(R.drawable.img_class_course_item_daniel, "Mr. Daniel", "Common daily sentences"));
-        courseList.add(new ClassCourseItem(R.drawable.img_class_course_item_simpson, "The Simpsons", "Addressing family members"));
-
-        // Tạo adapter và gán cho ListView
         adapter = new ClassCourseAdapter(getContext(), courseList);
         listView.setAdapter(adapter);
 
-        // Xử lý khi một mục trong ListView được nhấn
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Tạo một instance của fragment_class_course_choosed
-                Class_Course_Choosed fragmentChoosed = new Class_Course_Choosed();
+        // Firebase reference
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("courses");
 
-                // Bắt đầu transaction để thay thế fragment
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.class_view, new Class_Course_Choosed()); // fragment_container là ID của layout chứa fragment
-                transaction.addToBackStack(null);
-                transaction.commit();
+        // Fetch data from Firebase
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                courseList.clear();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    ClassCourseItem course = snapshot.getValue(ClassCourseItem.class);
+                    if (course != null) {
+                        Log.d("FirebaseData", "imageResId: " + course.getImageResId());
+                        courseList.add(course);
+                    }
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("FirebaseError", databaseError.getMessage());
             }
         });
 
+// Thêm sự kiện click cho ListView
+        listView.setOnItemClickListener((AdapterView<?> parent, View view, int position, long id) -> {
+            // Lấy item được click
+            ClassCourseItem selectedItem = courseList.get(position);
 
+            // Sử dụng FragmentManager và FragmentTransaction để chuyển fragment
+            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+            // Tạo một instance của fragment bạn muốn chuyển tới
+            Fragment fragmenIntroVocab = new Class_Course_Choosed();
+
+            // Thay thế fragment hiện tại bằng fragment mới
+            fragmentTransaction.replace(R.id.class_view, fragmenIntroVocab);
+            fragmentTransaction.addToBackStack(null); // Cho phép quay lại fragment trước đó bằng nút back
+            fragmentTransaction.commit();
+        });
         return rootView;
     }
 }
