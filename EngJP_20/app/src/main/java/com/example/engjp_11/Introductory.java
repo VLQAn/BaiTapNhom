@@ -7,10 +7,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.PopupWindow;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -72,6 +75,15 @@ public class Introductory extends Fragment {
         Button btnSampSentence = view.findViewById(R.id.btn_sample_sententces);
         Button btnReview = view.findViewById(R.id.btn_review);
 
+        View anchorView = view.findViewById(R.id.anchor_view);
+        if (anchorView != null) {
+            showPopupGuide(anchorView);
+        }
+        View anchorView1 = view.findViewById(R.id.anchor_view1);
+        if (anchorView1 != null) {
+            showPopupGuide1(anchorView1);
+        }
+
         btnVocab.setOnClickListener(v -> {
             // Sử dụng FragmentManager và FragmentTransaction để chuyển fragment
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
@@ -128,4 +140,40 @@ public class Introductory extends Fragment {
 
         return view;
     }
+    private void showPopupGuide(View anchorView) {
+        // Inflate layout của popup
+        View popupView = LayoutInflater.from(requireContext()).inflate(R.layout.popup_guide1, null);
+
+        // Tạo PopupWindow
+        PopupWindow popupWindow = new PopupWindow(popupView,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                true);
+
+
+
+        // Hiển thị popup ngay bên dưới icon (đè lên giao diện)
+//        popupWindow.showAsDropDown(anchorView, 0, -20); // Điều chỉnh vị trí hiển thị với offset (x, y)
+        popupWindow.showAtLocation(anchorView, Gravity.TOP, 200, 430);
+
+    }
+    private void showPopupGuide1(View anchorView) {
+        // Inflate layout của popup
+        View popupView = LayoutInflater.from(requireContext()).inflate(R.layout.popup_guide1, null);
+
+        // Tạo PopupWindow
+        PopupWindow popupWindow = new PopupWindow(popupView,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                true);
+
+
+
+        // Hiển thị popup ngay bên dưới icon (đè lên giao diện)
+        popupWindow.showAsDropDown(anchorView, -100, -150); // Điều chỉnh vị trí hiển thị với offset (x, y)
+//        popupWindow.showAtLocation(anchorView, Gravity.TOP, 0, 700);
+
+    }
+
+
 }

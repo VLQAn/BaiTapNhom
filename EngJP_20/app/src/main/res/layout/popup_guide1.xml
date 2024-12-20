@@ -7,20 +7,11 @@
 
     <!-- Mũi tên -->
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="63dp"
-        android:layout_height="42dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/ic_arrow_down"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <LinearLayout
-        android:layout_width="295dp"
-        android:layout_height="60dp"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="29dp"
         android:background="@drawable/background_white_border_stroke"
@@ -30,12 +21,24 @@
         <!-- Nội dung lời hướng dẫn -->
         <TextView
             android:id="@+id/guide_text"
-            android:layout_width="275dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tích điểm bằng cách xem video, học từ vựng, nghe. Điểm đó có thể đổi voucher giảm giá"
+            android:text="Tích điểm ở đây"
             android:textColor="#000000"
             android:textSize="14sp" />
     </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="63dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/ic_arrow_down"
+        android:rotation="180"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

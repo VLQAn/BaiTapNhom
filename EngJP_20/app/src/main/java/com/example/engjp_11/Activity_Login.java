@@ -1,5 +1,6 @@
 package com.example.engjp_11;
 
+import android.accounts.AccountManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +24,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.AccountPicker;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
@@ -190,17 +192,15 @@ public class Activity_Login extends AppCompatActivity {
                         if (snapshot.exists()) {
                             // Nếu email đã tồn tại, lấy tên
                             for (DataSnapshot userSnapshot : snapshot.getChildren()) {
-                                String userName = userSnapshot.child("name").getValue(String.class);
-                                emailEditText.setText(userName); // Hiển thị tên từ Firebase nếu cần
+                                userSnapshot.getRef().removeValue();// Hiển thị tên từ Firebase nếu cần
+                                // Thêm tài khoản mới
+                                addNewUserToFirebase(email, name);
+                                Toast.makeText(Activity_Login.this, "Tài khoản cũ đã được thay thế", Toast.LENGTH_SHORT).show();
                             }
                         } else {
-                            // Nếu email chưa tồn tại, thêm vào Firebase
-                            String userId = databaseReference.push().getKey();
-                            if (userId != null) {
-                                // Sử dụng tên từ tài khoản Google
-                                databaseReference.child(userId).setValue(new User(email, name));
-                                Toast.makeText(Activity_Login.this, "Email mới đã được lưu", Toast.LENGTH_SHORT).show();
-                            }
+                            // Thêm tài khoản mới
+                            addNewUserToFirebase(email, name);
+                            Toast.makeText(Activity_Login.this, "Email mới đã được lưu", Toast.LENGTH_SHORT).show();
                         }
                     }
 
@@ -210,7 +210,13 @@ public class Activity_Login extends AppCompatActivity {
                     }
                 });
     }
-
+    // Phương thức thêm tài khoản mới
+    private void addNewUserToFirebase(String email, String name) {
+        String userId = databaseReference.push().getKey();
+        if (userId != null) {
+            databaseReference.child(userId).setValue(new User(email, name));
+        }
+    }
 
     private void openNextActivity() {
         String email = emailEditText.getText().toString().trim();

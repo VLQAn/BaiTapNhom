@@ -5,12 +5,17 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import org.w3c.dom.Text;
 
 public class Class_Course_Choosed extends Fragment {
 
@@ -19,6 +24,8 @@ public class Class_Course_Choosed extends Fragment {
 
     private String mParam1;
     private String mParam2;
+    boolean isRadioButton1Checked = false;
+    boolean isRadioButton2Checked = false;
 
     public Class_Course_Choosed() {
         // Required empty public constructor
@@ -67,6 +74,41 @@ public class Class_Course_Choosed extends Fragment {
         LinearLayout mainLayout1 = view.findViewById(R.id.mainLayout1);
         LinearLayout mainLayout2 = view.findViewById(R.id.mainLayout2);
         LinearLayout mainLayout = view.findViewById(R.id.mainLayout);
+
+        RadioButton radioButton1 = view.findViewById(R.id.radioButton1);
+        RadioButton radioButton2 = view.findViewById(R.id.radioButton2);
+        RadioButton radioButton3 = view.findViewById(R.id.radioButton3);
+        RadioButton radioButton4 = view.findViewById(R.id.radioButton4);
+        Button button7 = view.findViewById(R.id.button7);
+        Button button8 = view.findViewById(R.id.button8);
+
+        TextView step1 =  view.findViewById(R.id.step1);
+
+
+
+        // Kiểm tra trạng thái của RadioButton1
+        radioButton1.setOnClickListener(v -> {
+            isRadioButton1Checked = radioButton1.isChecked();
+            updateButtonState(button7, isRadioButton1Checked && isRadioButton2Checked);
+        });
+
+        // Kiểm tra trạng thái của RadioButton2
+        radioButton2.setOnClickListener(v -> {
+            isRadioButton2Checked = radioButton2.isChecked();
+            updateButtonState(button7, isRadioButton1Checked && isRadioButton2Checked);
+        });
+
+        // Kiểm tra trạng thái của RadioButton1
+        radioButton3.setOnClickListener(v -> {
+            isRadioButton1Checked = radioButton3.isChecked();
+            updateButtonState(button8, isRadioButton1Checked && isRadioButton2Checked);
+        });
+
+        // Kiểm tra trạng thái của RadioButton2
+        radioButton4.setOnClickListener(v -> {
+            isRadioButton2Checked = radioButton4.isChecked();
+            updateButtonState(button8, isRadioButton1Checked && isRadioButton2Checked);
+        });
 
 
         lession1.setOnClickListener(new View.OnClickListener() {
@@ -120,6 +162,34 @@ public class Class_Course_Choosed extends Fragment {
                 // Handle when Step 2 is clicked
             }
         });
+        if (step1.getVisibility() == View.VISIBLE) {
+            step1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Chuyển sang Fragment khác khi step1 được nhấn
+                    loadFragment(new Introductory_Listening());
+                }
+            });
+        }
         return view;
     }
+    private void updateButtonState(Button button, boolean isCompleted) {
+        if (isCompleted) {
+            button.setText("Completed");
+            button.setBackgroundTintList(getContext().getResources().getColorStateList(R.color.btn_color1, null));
+            button.setTextColor(getContext().getResources().getColor(R.color.white, null));
+        } else {
+            button.setText("Incomplete");
+            button.setBackgroundTintList(getContext().getResources().getColorStateList(R.color.white, null));
+            button.setTextColor(getContext().getResources().getColor(R.color.black, null));
+        }
+    }
+    private void loadFragment(Fragment fragment) {
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.class_course_choose, fragment); // Đảm bảo container có ID chính xác
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
 }
