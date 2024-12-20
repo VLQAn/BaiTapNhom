@@ -2,43 +2,36 @@ package com.example.engjp_11;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Review#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class Review extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private RecyclerView videosRecyclerView;
+    private VideowatchAdapter videoAdapter;
+    private List<Videowatched> videoList;
 
     public Review() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Review.
-     */
-    // TODO: Rename and change types and number of parameters
     public static Review newInstance(String param1, String param2) {
         Review fragment = new Review();
         Bundle args = new Bundle();
@@ -58,27 +51,59 @@ public class Review extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_review, container, false);
 
-        // Tìm item theo ID và thêm OnClickListener
+        setupRecyclerView(view);
+        fetchVideosFromFirebase();
+        setupClickListeners(view);
+        return view;
+    }
+
+
+    private void setupClickListeners(View view) {
         LinearLayout itemReviewVocab = view.findViewById(R.id.item_review_vocab);
         LinearLayout itemReviewSentence = view.findViewById(R.id.item_review_sentence);
 
         itemReviewVocab.setOnClickListener(v -> {
-            // Sử dụng Intent để chuyển Activity
             Intent intent = new Intent(getActivity(), Review_Vocabulary.class);
             startActivity(intent);
         });
 
         itemReviewSentence.setOnClickListener(v -> {
-            // Sử dụng Intent để chuyển Activity
             Intent intent = new Intent(getActivity(), Review_Sample_Sentence.class);
             startActivity(intent);
         });
+    }
 
-        return view;
+    private void setupRecyclerView(View view) {
+        videosRecyclerView = view.findViewById(R.id.videos_recycler_view);
+        videosRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        videoList = new ArrayList<>();
+        videoAdapter = new VideowatchAdapter(getContext(), videoList);
+        videosRecyclerView.setAdapter(videoAdapter);
+    }
+
+    private void fetchVideosFromFirebase() {
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Videowatched");
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                videoList.clear(); // Làm trống danh sách trước khi thêm dữ liệu mới
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Videowatched video = snapshot.getValue(Videowatched.class);
+                    if (video != null) {
+                        videoList.add(video); // Thêm video vào danh sách
+                    }
+                }
+                videoAdapter.notifyDataSetChanged(); // Cập nhật RecyclerView
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Xử lý lỗi nếu xảy ra
+            }
+        });
     }
 }

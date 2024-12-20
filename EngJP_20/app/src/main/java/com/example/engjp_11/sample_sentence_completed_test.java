@@ -3,6 +3,7 @@ package com.example.engjp_11;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,9 @@ public class sample_sentence_completed_test extends AppCompatActivity {
             return insets;
         });
 
+        TextView result = findViewById(R.id.resultText);
+        int noCorrect = getIntent().getIntExtra("correctCount", 0);
+        result.setText("Correct " + noCorrect + "/5");
 
 
         // Xử lý sự kiện cho nút check again
